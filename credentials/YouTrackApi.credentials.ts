@@ -5,10 +5,10 @@ import {
 	INodeProperties,
 } from 'n8n-workflow';
 
-export class HttpBinApi implements ICredentialType {
-	name = 'httpbinApi';
-	displayName = 'HttpBin API';
-	documentationUrl = 'https://your-docs-url';
+export class YouTrackApi implements ICredentialType {
+	name = 'youtrackApi';
+	displayName = 'YouTrack API';
+	documentationUrl = 'https://www.jetbrains.com/help/youtrack/devportal/youtrack-rest-api.html';
 	properties: INodeProperties[] = [
 		{
 			displayName: 'Token',
@@ -17,13 +17,13 @@ export class HttpBinApi implements ICredentialType {
 			default: '',
 			typeOptions: {
 				password: true,
-			}
+			},
 		},
 		{
 			displayName: 'Domain',
 			name: 'domain',
 			type: 'string',
-			default: 'https://httpbin.org',
+			default: 'https://example.youtrackapi.com',
 		},
 	];
 
@@ -36,6 +36,8 @@ export class HttpBinApi implements ICredentialType {
 		properties: {
 			headers: {
 				Authorization: '={{"Bearer " + $credentials.token}}',
+				Accept: 'application/json',
+				'Content-Type': 'application/json',
 			},
 		},
 	};

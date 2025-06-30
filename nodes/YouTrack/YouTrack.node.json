@@ -1,0 +1,18 @@
+{
+	"node": "n8n-nodes-base.youtrack",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Development", "Developer Tools"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://www.jetbrains.com/help/youtrack/devportal/hub-api-permanent-token.html"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://www.jetbrains.com/help/youtrack/devportal/youtrack-dev-portal.html"
+			}
+		]
+	}
+}
