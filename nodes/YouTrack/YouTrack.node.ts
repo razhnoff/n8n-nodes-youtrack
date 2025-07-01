@@ -193,10 +193,10 @@ export class YouTrack implements INodeType {
 			} else if (resource === 'issue' && operation === 'getAll') {
 				const agileId = this.getNodeParameter('agileIdForIssues', i);
 				const sprintId = this.getNodeParameter('sprintId', i);
-				endpoint = `/api/agiles/${agileId}/sprints/${sprintId}/issues?fields=idReadable,summary,customFields(name,value(name))`;
+				endpoint = `/api/agiles/${agileId}/sprints/${sprintId}/issues?fields=idReadable,summary,description,customFields(name,value(name))`;
 			} else if (resource === 'issue' && operation === 'getById') {
 				const issueId = this.getNodeParameter('issueId', i);
-				endpoint = `/api/issues/${issueId}?fields=idReadable,summary,customFields(name,value(name))`;
+				endpoint = `/api/issues/${issueId}?fields=idReadable,summary,description,customFields(name,value(name))`;
 			} else if (resource === 'timeTracking') {
 				const issueId = this.getNodeParameter('issueId', i);
 				endpoint = `/api/issues/${issueId}/timeTracking/workItems?fields=duration(minutes),author(name),text,issue(idReadable)`;
