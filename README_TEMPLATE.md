@@ -1,8 +1,8 @@
-# n8n-nodes-_node-name_
+# n8n-nodes-youtrack_
 
-This is an n8n community node. It lets you use _app/service name_ in your n8n workflows.
+This is an n8n community node. It lets you use YouTrack service in your n8n workflows.
 
-_App/service name_ is _one or two sentences describing the service this node integrates with_.
+YouTrack is one or two sentences describing the service this node integrates with_.
 
 [n8n](https://n8n.io/) is a [fair-code licensed](https://docs.n8n.io/reference/license/) workflow automation platform.
 
@@ -12,7 +12,6 @@ _App/service name_ is _one or two sentences describing the service this node int
 [Compatibility](#compatibility)  
 [Usage](#usage)  <!-- delete if not using this section -->  
 [Resources](#resources)  
-[Version history](#version-history)  <!-- delete if not using this section -->  
 
 ## Installation
 
@@ -20,7 +19,7 @@ Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes
 
 ## Operations
 
-_List the operations supported by your node._
+ Supported operations like in http module 
 
 ## Credentials
 

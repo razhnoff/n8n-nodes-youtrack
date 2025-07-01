@@ -6,10 +6,18 @@ import {
 } from 'n8n-workflow';
 
 export class YouTrackApi implements ICredentialType {
-	name = 'youtrackApi';
+	name = 'youTrackApi';
 	displayName = 'YouTrack API';
-	documentationUrl = 'https://www.jetbrains.com/help/youtrack/devportal/youtrack-rest-api.html';
+	documentationUrl = 'https://www.jetbrains.com/help/youtrack/devportal/api.html';
 	properties: INodeProperties[] = [
+		{
+			displayName: 'API URL',
+			name: 'url',
+			type: 'string',
+			default: '',
+			placeholder: 'https://your.youtrack.cloud',
+			required: true
+		},
 		{
 			displayName: 'Token',
 			name: 'token',
@@ -18,12 +26,6 @@ export class YouTrackApi implements ICredentialType {
 			typeOptions: {
 				password: true,
 			},
-		},
-		{
-			displayName: 'Domain',
-			name: 'domain',
-			type: 'string',
-			default: 'https://example.youtrackapi.com',
 		},
 	];
 
@@ -45,8 +47,12 @@ export class YouTrackApi implements ICredentialType {
 	// The block below tells how this credential can be tested
 	test: ICredentialTestRequest = {
 		request: {
-			baseURL: '={{$credentials?.domain}}',
-			url: '/bearer',
+			baseURL: '={{$credentials?.url}}',
+			url: '/',
+			method: 'GET',
+			headers: {
+				Authorization: '={{"Bearer " + $credentials.token}}',
+			},
 		},
 	};
 }
